@@ -1,9 +1,11 @@
 // const bot_express = require("bot-express");
 const logger = require("morgan");
+const bodyParser = require("body-parser");
 const express = require("express");
 
 const app = express();
 app.use(logger("dev"));
+app.use(bodyParser.json());
 
 // app.use("/webhook", bot_express({
 //     apiai_client_access_token: process.env.APIAI_CLIENT_ACCESS_TOKEN, // 必須
