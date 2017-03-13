@@ -29,3 +29,8 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
     res.send("Node is runnig on port" + port);
 });
+
+app.post("/webhook", (req, res) => {
+    res.status(200).end();
+    console.log(req.body);
+});
