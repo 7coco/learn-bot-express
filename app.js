@@ -23,8 +23,8 @@ app.use(bodyParser.json());
 //     // memory_retention: ミリ秒 // オプション。Botが会話を記憶する期間をミリ秒で指定。デフォルトは60000 (60秒)
 // }));
 
-const port = 3000;
-app.listen(port || process.env.PORT, () => {
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
     console.log("Node is runnig on port" + port);
 });
 
