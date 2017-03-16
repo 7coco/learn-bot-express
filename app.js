@@ -50,6 +50,7 @@ app.post("/webhook", (req, res) => {
                     text: "ぽけぽけ",
                 }],
             };
+            console.log(body.replyToken);
             let url = "https://api.line.me/v2/bot/message/reply";
             request({
                 url,
@@ -58,8 +59,6 @@ app.post("/webhook", (req, res) => {
                 body,
                 json: true,
             });
-        }else{
-            console.log("あれれ");
         }
     }
 });
