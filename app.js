@@ -38,6 +38,26 @@ app.get("/", (req, res) => {
 app.post("/webhook", (req, res) => {
     res.status(200).end();
     for(var event of req.body.events){
-        if (event.type === "message") console.log(event.message);
+        if (event.type === "message"){
+            let headers = {
+                "Content-Type": "application/json",
+                Authorization: "Bearer" + LINE_CHANNEL_ACCESS_TOKEN,
+            };
+            let body = {
+                replyToken: event.replyToken,
+                messages: [{
+                    type: "text",
+                    text: "ぽけぽけ",
+                }],
+            };
+            let url = "https://api.line.me/v2/bot/message/reply";
+            request({
+                url,
+                method: "POST",
+                headers,
+                body,
+                json: true,
+            });
+        }
     }
 });
