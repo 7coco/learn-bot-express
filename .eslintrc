@@ -1,6 +1,7 @@
 {
   "extends": "airbnb",
   "rules":{
+    "no-restricted-syntax":0,
     "key-spacing":["error",{"afterColon":true}],
     "import/no-extraneous-dependencies":0,
     "max-len":0,
