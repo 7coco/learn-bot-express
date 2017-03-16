@@ -41,7 +41,7 @@ app.post("/webhook", (req, res) => {
         if (event.type === "message"){
             let headers = {
                 "Content-Type": "application/json",
-                Authorization: "Bearer" + LINE_CHANNEL_ACCESS_TOKEN,
+                Authorization: "Bearer " + LINE_CHANNEL_ACCESS_TOKEN,
             };
             let body = {
                 replyToken: event.replyToken,
