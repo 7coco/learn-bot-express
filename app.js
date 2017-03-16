@@ -5,6 +5,7 @@ const request = require("request");
 const express = require("express");
 
 const LINE_CHANNEL_ACCESS_TOKEN = process.env.LINE_CHANNEL_ACCESS_TOKEN;
+console.log(process.env);
 
 const app = express();
 app.use(logger("dev"));
