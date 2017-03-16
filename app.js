@@ -34,7 +34,7 @@ app.get("/", (req, res) => {
 
 app.post("/webhook", (req, res) => {
     res.status(200).end();
-    for(var event of req.body.event){
+    for(var event of req.body.events){
         if (event.type === "message") console.log(event.message);
     }
 });
