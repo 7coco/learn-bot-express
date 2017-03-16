@@ -5,7 +5,6 @@ const request = require("request");
 const express = require("express");
 
 const LINE_CHANNEL_ACCESS_TOKEN = process.env.LINE_CHANNEL_ACCESS_TOKEN;
-console.log(process.env);
 
 const app = express();
 app.use(logger("dev"));
@@ -51,9 +50,6 @@ app.post("/webhook", (req, res) => {
                     text: "ぽけぽけ",
                 }],
             };
-            console.log("どしてー");
-            console.log(headers);
-            console.log(body);
             let url = "https://api.line.me/v2/bot/message/reply";
             request({
                 url,
